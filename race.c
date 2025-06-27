@@ -74,8 +74,29 @@ void startRace(struct RaceCar* raceCar1, struct RaceCar* raceCar2) {
 int main() {
 	srand(time(0));
 
-  struct RaceCar raceCar1 = {"Darita", "pink"};
-  struct RaceCar raceCar2 = {"Josuesito", "black"};
+  char name1[50];
+  char color1[50];
+  printf("Racer 1 Name: ");
+  scanf("%s", name1);
+  printf("Racer 1 Car Color: ");
+  scanf("%s", color1);
+
+  char name2[50];
+  char color2[50];
+  printf("Racer 2 Name: ");
+  scanf("%s", name2);
+  printf("Racer 2 Car Color: ");
+  scanf("%s", color2);
+
+  struct RaceCar raceCar1;
+  strcpy(raceCar1.driverName, name1);
+  strcpy(raceCar1.raceCarColor, color1);
+  raceCar1.totalLapTime = 0;
+
+  struct RaceCar raceCar2;
+  strcpy(raceCar2.driverName, name2);
+  strcpy(raceCar2.raceCarColor, color2);
+  raceCar2.totalLapTime = 0;
 
   printIntro();
   printCountDown();
